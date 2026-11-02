@@ -1,0 +1,32 @@
+collection:
+  initial_days: 7
+  refresh_days: 2
+  page_size: 100
+  retries: 3
+  max_flood_wait: 60
+  request_timeout: 45
+  page_pause: 1
+
+# Candidates only; uncomment after selecting sources. No automatic joins.
+sources: []
+#  - peer: '@vacancy_cs'
+#    kind: jobs
+#  - peer: '@hrlunapark'
+#    kind: jobs
+#  - peer: '@zarubezhom_jobs'
+#    kind: jobs
+#  - peer: -1001234567890  # marked ID from `hunt sources`
+#    kind: general
+#    topics: [123, 456]   # omit for all topics; 1 = General
+
+# Case-insensitive regexes; entries are ORed. Omit a list to use defaults.
+filters:
+  vacancy_patterns: ['ваканси', 'ищем', 'требуется', 'нанима', 'hiring', 'vacanc', 'job opening', 'join our team']
+  relevance_patterns: ['python', 'backend', 'back.end', 'бэкенд', 'бекенд', 'golang', '\bgo\b', '\bapi\b', 'robot', 'робот', '\bwms\b', '\brms\b', 'physical ai', 'distributed', 'распредел', '\bai\b', 'machine learning']
+  resume_patterns: ['ищу работу', 'ищу проект', 'ищу ваканс', 'looking for (a |new )?(job|role|opportunit)', 'open to work', '#резюме', '#resume']
+
+# Optional. Configure only after agreeing on a destination.
+# The tab must already exist. The tab name «Вакансии» is always refused.
+sheets:
+  spreadsheet_id: ''
+  worksheet: ''
